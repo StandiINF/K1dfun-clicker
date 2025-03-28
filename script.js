@@ -676,12 +676,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         move();
     }
-
-    // Add keyboard shortcut for Ctrl+M to give 1 million points
-    document.addEventListener('keydown', (event) => {
-        if (event.ctrlKey && event.key === 'm') {
-            counter += 100000000000000000; // Add 1 million points
-            counterElement.textContent = counter;
-        }
     });
 });
