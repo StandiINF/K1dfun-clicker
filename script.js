@@ -676,5 +676,115 @@ document.addEventListener('DOMContentLoaded', () => {
 
         move();
     }
-    });
+
+    // Save game data to localStorage
+    function saveGame() {
+        const gameData = {
+            counter,
+            pointsPerClick,
+            upgradeCost,
+            autoclickerCount,
+            autoclickerUpgradeCost,
+            autoclickerSpeedCost,
+            autoclickerInterval,
+            imageUpgradeCost,
+            imageUpgraded,
+            imageUpgrade2Cost,
+            imageUpgrade2Purchased,
+            imageUpgrade3Cost,
+            imageUpgrade3Purchased,
+            bigCanUpgradeCost,
+            bigCanUpgradePurchased,
+            bouncingIrnBruCost,
+            bouncingIrnBruCount,
+            doublePointsCost,
+            reduceAutoclickerIntervalCost,
+            spawnExtraIrnBruCost,
+            extraIrnBruCount,
+            triplePointsCost,
+            instantClickCost,
+            reduceBounceSpeedCost,
+            increaseBounceSpeedCost,
+            spawnGoldenIrnBruCost,
+            reduceUpgradeCostCost,
+            increaseAutoclickerPointsCost,
+            spawnMegaIrnBruCost,
+            reduceBigCanIntervalCost,
+            unlockSecretUpgradeCost,
+            bounceSpeedModifier
+        };
+        localStorage.setItem('k1dfunClickerSave', JSON.stringify(gameData));
+    }
+
+    // Load game data from localStorage
+    function loadGame() {
+        const savedData = localStorage.getItem('k1dfunClickerSave');
+        if (savedData) {
+            const gameData = JSON.parse(savedData);
+
+            counter = gameData.counter || 0;
+            pointsPerClick = gameData.pointsPerClick || 1;
+            upgradeCost = gameData.upgradeCost || 10;
+            autoclickerCount = gameData.autoclickerCount || 1;
+            autoclickerUpgradeCost = gameData.autoclickerUpgradeCost || 200;
+            autoclickerSpeedCost = gameData.autoclickerSpeedCost || 300;
+            autoclickerInterval = gameData.autoclickerInterval || 5000;
+            imageUpgradeCost = gameData.imageUpgradeCost || 1000;
+            imageUpgraded = gameData.imageUpgraded || false;
+            imageUpgrade2Cost = gameData.imageUpgrade2Cost || 50000;
+            imageUpgrade2Purchased = gameData.imageUpgrade2Purchased || false;
+            imageUpgrade3Cost = gameData.imageUpgrade3Cost || 500000;
+            imageUpgrade3Purchased = gameData.imageUpgrade3Purchased || false;
+            bigCanUpgradeCost = gameData.bigCanUpgradeCost || 500;
+            bigCanUpgradePurchased = gameData.bigCanUpgradePurchased || false;
+            bouncingIrnBruCost = gameData.bouncingIrnBruCost || 1500;
+            bouncingIrnBruCount = gameData.bouncingIrnBruCount || 0;
+            doublePointsCost = gameData.doublePointsCost || 5000;
+            reduceAutoclickerIntervalCost = gameData.reduceAutoclickerIntervalCost || 10000;
+            spawnExtraIrnBruCost = gameData.spawnExtraIrnBruCost || 20000;
+            extraIrnBruCount = gameData.extraIrnBruCount || 0;
+            triplePointsCost = gameData.triplePointsCost || 10000;
+            instantClickCost = gameData.instantClickCost || 15000;
+            reduceBounceSpeedCost = gameData.reduceBounceSpeedCost || 20000;
+            increaseBounceSpeedCost = gameData.increaseBounceSpeedCost || 25000;
+            spawnGoldenIrnBruCost = gameData.spawnGoldenIrnBruCost || 30000;
+            reduceUpgradeCostCost = gameData.reduceUpgradeCostCost || 35000;
+            increaseAutoclickerPointsCost = gameData.increaseAutoclickerPointsCost || 40000;
+            spawnMegaIrnBruCost = gameData.spawnMegaIrnBruCost || 45000;
+            reduceBigCanIntervalCost = gameData.reduceBigCanIntervalCost || 50000;
+            unlockSecretUpgradeCost = gameData.unlockSecretUpgradeCost || 100000;
+            bounceSpeedModifier = gameData.bounceSpeedModifier || 1;
+
+            // Update UI elements
+            counterElement.textContent = counter;
+            upgradeButton.textContent = `Upgrade (Cost: ${upgradeCost})`;
+            autoclickerButton.textContent = `Autoclicker (Cost: ${autoclickerUpgradeCost})`;
+            autoclickerSpeedButton.textContent = `Autoclicker Speed (Cost: ${autoclickerSpeedCost})`;
+            imageUpgradeButton.textContent = `Bottle Upgrade (Cost: ${imageUpgradeCost})`;
+            doublePointsButton.textContent = `Double Points (Cost: ${doublePointsCost})`;
+            reduceAutoclickerIntervalButton.textContent = `Reduce Autoclicker Interval (Cost: ${reduceAutoclickerIntervalCost})`;
+            spawnExtraIrnBruButton.textContent = `Spawn Extra Irn Bru (Cost: ${spawnExtraIrnBruCost})`;
+            triplePointsButton.textContent = `Triple Points (Cost: ${triplePointsCost})`;
+            instantClickButton.textContent = `Instant Click (Cost: ${instantClickCost})`;
+            reduceBounceSpeedButton.textContent = `Reduce Bounce Speed (Cost: ${reduceBounceSpeedCost})`;
+            increaseBounceSpeedButton.textContent = `Increase Bounce Speed (Cost: ${increaseBounceSpeedCost})`;
+            spawnGoldenIrnBruButton.textContent = `Spawn Golden Irn Bru (Cost: ${spawnGoldenIrnBruCost})`;
+            reduceUpgradeCostButton.textContent = `Reduce Upgrade Costs (Cost: ${reduceUpgradeCostCost})`;
+            increaseAutoclickerPointsButton.textContent = `Increase Autoclicker Points (Cost: ${increaseAutoclickerPointsCost})`;
+            spawnMegaIrnBruButton.textContent = `Spawn Mega Irn Bru (Cost: ${spawnMegaIrnBruCost})`;
+            reduceBigCanIntervalButton.textContent = `Reduce Big Can Interval (Cost: ${reduceBigCanIntervalCost})`;
+            unlockSecretUpgradeButton.textContent = `Unlock Secret Upgrade (Cost: ${unlockSecretUpgradeCost})`;
+
+            if (imageUpgraded) imageUpgradeButton.style.display = "none";
+            if (imageUpgrade2Purchased) imageUpgrade2Button.style.display = "none";
+            if (imageUpgrade3Purchased) imageUpgrade3Button.style.display = "none";
+            if (bigCanUpgradePurchased) bigCanUpgradeButton.style.display = "none";
+        }
+    }
+
+    // Save game every 5 seconds
+    setInterval(saveGame, 5000);
+
+    // Load game on startup
+    loadGame();
 });
