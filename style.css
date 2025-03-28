@@ -1,0 +1,337 @@
+html {
+    background-color: black;
+    user-select: none;
+}
+
+#counter h3 {
+    color: white;
+}
+
+#K1dfun {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+#K1dfun.active {
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform 0.1s;
+}
+
+.irnBru1 {
+    position: absolute;
+    height: 50px;
+    width: auto;
+    transition: top 0.1s, left 0.1s;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.irnBru1.fade-in {
+    opacity: 1;
+}
+
+.irnBru1.fade-out {
+    opacity: 0;
+}
+
+#upgradeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#upgradeButton:hover {
+    background-color: #45a049;
+}
+
+#autoclickerButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#autoclickerButton:hover {
+    background-color: #1976D2;
+}
+
+#autoclickerButton:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+#autoclickerSpeedButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FF9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#autoclickerSpeedButton:hover {
+    background-color: #F57C00;
+}
+
+#autoclickerSpeedButton:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+#imageUpgradeButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #9C27B0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#imageUpgradeButton:hover {
+    background-color: #7B1FA2;
+}
+
+#imageUpgradeButton:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+#imageUpgrade2Button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #673AB7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#imageUpgrade2Button:hover {
+    background-color: #512DA8;
+}
+
+#imageUpgrade2Button:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+#imageUpgrade3Button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#imageUpgrade3Button:hover {
+    background-color: #E64A19;
+}
+
+#imageUpgrade3Button:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+.big-can {
+    position: absolute;
+    height: 100px;
+    width: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: spin 2s linear infinite;
+    z-index: 5;
+}
+
+.big-can.spin-left {
+    left: 10%; /* Position to the left of K1dfun */
+    animation-direction: reverse;
+}
+
+.big-can.spin-right {
+    right: 10%; /* Position to the right of K1dfun */
+}
+
+@keyframes spin {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+#bigCanUpgradeButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#bigCanUpgradeButton:hover {
+    background-color: #E64A19;
+}
+
+#bigCanUpgradeButton:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+.bouncing-irn-bru {
+    position: absolute;
+    height: 50px;
+    width: auto;
+    z-index: 10;
+    transition: transform 0.1s;
+}
+
+#bouncingIrnBruButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FFC107;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#bouncingIrnBruButton:hover {
+    background-color: #FFA000;
+}
+
+#bouncingIrnBruButton:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+#doublePointsButton,
+#reduceAutoclickerIntervalButton,
+#spawnExtraIrnBruButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#doublePointsButton:hover,
+#reduceAutoclickerIntervalButton:hover,
+#spawnExtraIrnBruButton:hover {
+    background-color: #45a049;
+}
+
+#doublePointsButton:disabled,
+#reduceAutoclickerIntervalButton:disabled,
+#spawnExtraIrnBruButton:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+#triplePointsButton,
+#instantClickButton,
+#reduceBounceSpeedButton,
+#increaseBounceSpeedButton,
+#spawnGoldenIrnBruButton,
+#reduceUpgradeCostButton,
+#increaseAutoclickerPointsButton,
+#spawnMegaIrnBruButton,
+#reduceBigCanIntervalButton,
+#unlockSecretUpgradeButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#triplePointsButton:hover,
+#instantClickButton:hover,
+#reduceBounceSpeedButton:hover,
+#increaseBounceSpeedButton:hover,
+#spawnGoldenIrnBruButton:hover,
+#reduceUpgradeCostButton:hover,
+#increaseAutoclickerPointsButton:hover,
+#spawnMegaIrnBruButton:hover,
+#reduceBigCanIntervalButton:hover,
+#unlockSecretUpgradeButton:hover {
+    background-color: #45a049;
+}
+
+#triplePointsButton:disabled,
+#instantClickButton:disabled,
+#reduceBounceSpeedButton:disabled,
+#increaseBounceSpeedButton:disabled,
+#spawnGoldenIrnBruButton:disabled,
+#reduceUpgradeCostButton:disabled,
+#increaseAutoclickerPointsButton:disabled,
+#spawnMegaIrnBruButton:disabled,
+#reduceBigCanIntervalButton:disabled,
+#unlockSecretUpgradeButton:disabled {
+    background-color: #B0BEC5;
+    cursor: not-allowed;
+}
+
+.mega-irn-bru {
+    position: absolute;
+    z-index: 15;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button {
+    z-index: 100; /* Ensure buttons appear over everything else */
+    position: relative; /* Ensure z-index applies */
+}
